@@ -15,6 +15,6 @@
   "release": "concurrently \"yarn release:css\" \"yarn release:cljs\""
  },
  "dependencies": {
-  "external-svg-loader": "^1.6.10",
+  "external-svg-loader": "^1.6.10"
  }
 }
