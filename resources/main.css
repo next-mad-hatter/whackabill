@@ -1,0 +1,252 @@
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+@keyframes blink{from,to{color:transparent}100%{color:#a3e635}}
+@-moz-keyframes blink{from,to{color:transparent}100%{color:#a3e635}}
+@-webkit-keyframes blink{from,to{color:transparent}100%{color:#a3e635}}
+@-ms-keyframes blink{from,to{color:transparent}100%{color:#a3e635}}
+@-o-keyframes blink{from,to{color:transparent}100%{color:#a3e635}}
+
+html {
+  color: #FFFBEB;
+  background-color: #164E63;
+  font-family: monospace, monospace;
+}
+
+.csv-column {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+.tr button {
+}
+
+.tr button svg {
+  width: 1.9rem;
+  height: 1.9rem;
+  padding: 3px;
+}
+
+button.delete {
+  width: 6.9rem;
+  display: flex;
+  justify-content: center;
+  cursor: inherit;
+}
+
+button.delete.hidden {
+  display: none;
+}
+
+div.actions {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: start;
+  align-items: stretch;
+}
+
+div.trash-placeholder {
+  display: none;
+}
+
+.border-2:not(.actions button) {
+  margin: 10px;
+}
+
+.actions .border-2 {
+  margin: 3px;
+}
+
+.th {
+  text-align: left;
+  font-weight: 500;
+}
+
+.hidden {
+  display: none;
+}
+
+input, .blink
+{
+  color: #a3e635;
+}
+
+.blink {
+  margin-right: 0.3rem;
+  font-weight: 600;
+  /*
+  animation:blink 1s steps(5,start) infinite
+  */
+}
+
+input {
+  font-weight: 500;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  caret-shape: block;
+}
+
+div.new {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+input:focus, input:focus-within {
+  outline: 0;
+}
+
+td, .th div {
+  border: 2px solid transparent;
+  border-radius: 2pt;
+}
+
+.th div {
+  width: 100%;
+}
+
+.th:hover:not(.active) div, .th:active div
+{
+  box-shadow: 0 0 2px 2px #fffbeb;
+  z-index: 100;
+}
+
+button.delete.dragged-over {
+  background-color: #c2410c;
+}
+
+button.add:hover {
+  background-color: #4d7c0f;
+  /*
+  background-color: #65a30d;
+  background-color: #3f6212;
+  */
+}
+
+button.save:hover {
+  /*
+  background-color: #7e22ce;
+  */
+}
+
+button.reset:hover {
+  /*
+  background-color: #7e22ce;
+  */
+}
+
+button.reset, button.save {
+  cursor: not-allowed;
+  color: gray;
+  border-color: gray;
+  background: gray;
+  z-index: -100;
+}
+
+td {
+  text-align: right;
+}
+
+tr, .tr {
+  padding: 10px;
+}
+
+tbody tr:not(.p-row-odd) {
+  background: #155e75;
+}
+
+.p-paginator button {
+  padding: 4px;
+}
+
+.p-highlight {
+  color: #fde68a;
+}
+
+ul.p-autocomplete-items {
+  background: #155e75;
+  z-index: 300;
+}
+
+li.p-autocomplete-item {
+  font-style: italic;
+  padding: 4px;
+}
+
+li.p-autocomplete-item:hover {
+  color: #a3e635;
+}
+
+.rtable--flip table {
+  display: flex;
+}
+
+div.rtable--flip {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: start;
+}
+
+.rtable--flip {
+  display: flex;
+  overflow: hidden;
+  background: none;
+}
+
+.rtable--flip thead {
+  display: none;
+}
+
+.p-datatable-header, .rtable--flip .tr {
+  display: flex;
+  flex-direction: row;
+}
+
+.rtable--flip .p-datatable-header {
+  display: flex;
+  flex-shrink: 0;
+  min-width: min-content;
+}
+
+.p-datatable-wrapper {
+}
+
+.rtable--flip tbody {
+  display: flex;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.rtable--flip tr, .rtable--flip .tr {
+  display: flex;
+  flex-direction: column;
+  min-width: min-content;
+  flex-shrink: 0;
+}
+
+.rtable--flip .th {
+  display: flex;
+}
+
+.rtable--flip td {
+  background-image: none !important;
+  border-left: 0;
+}
+
+.rtable--flip .th:not(:last-child),
+.rtable--flip td:not(:last-child) {
+  border-bottom: 0;
+}

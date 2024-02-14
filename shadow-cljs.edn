@@ -1,0 +1,10 @@
+{:dev-http {3000 "./resources/public/"},
+ :source-paths ["src"],
+ :dependencies
+ [[com.pitch/uix.core "0.10.0"] [com.pitch/uix.dom "0.10.0"]],
+ :builds
+ {:main
+  {:target :browser,
+   :output-dir "resources/public/out",
+   :asset-path "/out", 
+   :modules {:main {:entries [whackabill.core]}}}}}
